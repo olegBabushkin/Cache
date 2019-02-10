@@ -1,5 +1,7 @@
 public class StrategyLRR2 implements IStrategy {
+
     @Override
+    //ExclusiveDE
     public void extrusion(String element, CacheL1 cacheL1, CacheL2 cacheL2) {
         if (!cacheL1.isFull()) {
             cacheL1.setElement(element);

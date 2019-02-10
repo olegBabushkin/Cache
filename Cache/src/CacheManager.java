@@ -18,13 +18,7 @@ public class CacheManager implements ICache {
     }
 
     @Override
-    public void putInclusive(String element) {
-        strategy.extrusion(element, cache1, cache2);
-    }
-
-
-    @Override
-    public void putExclusive(String element) {
+    public void put(String element) {
         strategy.extrusion(element, cache1, cache2);
     }
 
