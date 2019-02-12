@@ -2,7 +2,7 @@ package model;
 
 import java.util.*;
 
-public abstract class Cache<K, V> {
+public abstract class Cache<K, V> { //!!!!!!!!!!
     private Map<K, V> cache;
     private Queue<Pair> queue;
     private int capacity;
