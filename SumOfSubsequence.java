@@ -1,6 +1,6 @@
 public class SumOfSubsequence {
     public static void main(String[] args) {
-        int[] a = new int[]{1, 5, -2, 40, 43};
+        int[] a = new int[]{-2,-3,4,-1,-2,1,5,-3};
         sub(a);
     }
 
