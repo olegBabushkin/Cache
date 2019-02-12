@@ -10,18 +10,18 @@ public class StrategyLRR1 implements IStrategy {
 
 
     @Override
-    public void extrusion(String key, Object value, CacheL1 cacheL1, CacheL2 cacheL2) {
+    public void extrusion(Object key, Object value, CacheL1 cacheL1, CacheL2 cacheL2) {
         this.cacheL1 = cacheL1;
         this.cacheL2 = cacheL2;
         setElementInclusiveDE(key, value);
     }
 
-    public void extrusionCacheisFull(String key, Object value) {
+    public void extrusionCacheisFull(Object key, Object value) {
         cacheL2.removeOldElemKey();
         extrusionCacheisNotFull(key, value);
     }
 
-    public void extrusionCacheisNotFull(String key, Object value) {
+    public void extrusionCacheisNotFull(Object key, Object value) {
         cacheL2.setElement(key, value);
         if ((!cacheL1.isFull()))
             cacheL1.setElement(key, value);
@@ -30,7 +30,7 @@ public class StrategyLRR1 implements IStrategy {
             cacheL1.setElement(key, value);
         }
     }
-    public void setElementInclusiveDE(String key, Object value) {
+    public void setElementInclusiveDE(Object key, Object value) {
         if (!cacheL2.isFull()) {
             extrusionCacheisNotFull(key, value);
         } else {

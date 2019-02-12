@@ -4,7 +4,7 @@ import model.CacheL1;
 import model.CacheL2;
 import strategy.IStrategy;
 
-public class CacheManager implements ICache {
+public class CacheManager<K,V> implements ICache<K,V> {
     private CacheL1 cache1;
     private CacheL2 cache2;
     private IStrategy strategy;
@@ -22,16 +22,16 @@ public class CacheManager implements ICache {
     }
 
     @Override
-    public void put(String key, Object value) {
+    public void put(K key, V value) {
         strategy.extrusion(key, value, cache1, cache2);
     }
 
     @Override
-    public Object get(String date) {
+    public V get(K date) {
         if (cache1.getData(date).equals("element not found"))
-            return cache2.getData(date);
+            return (V) cache2.getData(date); //!!!!!!
         else
-            return cache1.getData(date);
+            return (V) cache1.getData(date);
     }
 
     @Override
@@ -41,4 +41,5 @@ public class CacheManager implements ICache {
                 ", cache2=" + cache2 +
                 '}';
     }
+
 }

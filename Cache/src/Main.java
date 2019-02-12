@@ -9,16 +9,16 @@ public class Main {
 
         CacheL1 l1 = new CacheL1(5);
         CacheL2 l2 = new CacheL2(10);
-        CacheManager cache1 = new CacheManager(new StrategyLRR1(), l1, l2);
+        CacheManager<String, Integer> cache1 = new CacheManager(new StrategyLRR1(), l1, l2);
 
-        CacheManager cache2 = new CacheManager(new StrategyLRR2());
+        CacheManager<String, Object> cache2 = new CacheManager(new StrategyLRR2());
 
 
-        cache1.put("Oleg", 44);
+        cache1.put("Oleg", 12);
         cache1.put("Oleg4", 55);
         cache1.put("Oleg5", 55);
         cache1.put("Oleg6", 55);
-        cache1.put("Oleg7", 55);
+        cache1.put("Oleg7", 45);
         cache1.put("Oleg8", 55);
 
         System.out.println(cache1.get("Oleg"));

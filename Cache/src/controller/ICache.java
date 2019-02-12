@@ -1,7 +1,7 @@
 package controller;
 
 //point of entry
-public interface ICache {
-    void put (String key, Object value);
-    Object get (String date);
+public interface ICache <K,V> {
+    void put (K key, V value);
+    V get (K date);
 }

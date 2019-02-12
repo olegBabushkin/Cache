@@ -2,8 +2,8 @@ package model;
 
 import java.util.*;
 
-public abstract class Cache {
-    private Map<String, Object> cache;
+public abstract class Cache<K, V> {
+    private Map<K, V> cache;
     private Queue<Pair> queue;
     private int capacity;
 
@@ -13,23 +13,21 @@ public abstract class Cache {
         this.capacity = capacity;
     }
 
-    public String getKey(String key) {
+    public K getKey(K key) {
         if (cache.containsKey(key)) {
             return key;
-        } else {
-            return "element not found";
-        }
+        } else
+            return (K) "not found";
     }
 
-    public Object getData(String key){
+    public V getData(K key) {
         if (cache.containsKey(key)) {
-            return cache.get(key);
-        } else {
-            return "element not found";
-        }
+            return (V) cache.get(key);
+        } else
+            return (V) "not found";
     }
 
-    public void setElement(String key, Object value) {
+    public void setElement(K key, V value) {
         cache.put(key, value);
         queue.add(new Pair(key, System.currentTimeMillis()));
     }
@@ -39,7 +37,7 @@ public abstract class Cache {
         getQueue().remove();
     }
 
-    public String findOldestElemKey() {
+    public Object findOldestElemKey() {            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         return queue.peek().getKey();
     }
 
@@ -47,11 +45,11 @@ public abstract class Cache {
         cache.clear();
     }
 
-    public Map<String, Object> getCache() {
+    public Map<K, V> getCache() {
         return cache;
     }
 
-    public void setCache(Map<String, Object> cache) {
+    public void setCache(Map<K, V> cache) {
         this.cache = cache;
     }
 
