@@ -1,45 +1,35 @@
-public class Leaf<K, V> {
-    private K key;
-    private V value;
-    private Leaf<K, V> left, right;
+public class Leaf<K extends Comparable<K>,V> {
+    private Data<K,V> data;
+    Leaf left, right;
 
-    public Leaf(K key, V value) {
-        this.key = key;
-        this.value = value;
+    public Leaf(Data<K,V> data) {
+        this.data = data;
     }
 
     public Leaf() {
     }
 
-    public K getKey() {
-        return key;
+    public Data<K,V> getData() {
+        return data;
     }
 
-    public void setKey(K key) {
-        this.key = key;
+    public void setData(Data<K,V> data) {
+        this.data = data;
     }
 
-    public V getValue() {
-        return value;
-    }
-
-    public void setValue(V value) {
-        this.value = value;
-    }
-
-    public Leaf<K, V> getLeft() {
+    public Leaf getLeft() {
         return left;
     }
 
-    public void setLeft(Leaf<K, V> left) {
+    public void setLeft(Leaf left) {
         this.left = left;
     }
 
-    public Leaf<K, V> getRight() {
+    public Leaf getRight() {
         return right;
     }
 
-    public void setRight(Leaf<K, V> right) {
+    public void setRight(Leaf right) {
         this.right = right;
     }
 }
