@@ -1,0 +1,7 @@
+addInReddis
+addInDB
+addInReddis
+addInDB
+addInReddis
+deleteFromDB
+addInDB
