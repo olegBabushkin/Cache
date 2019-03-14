@@ -40,8 +40,9 @@ public abstract class Cache<K, V> {
 
     public void removeOldElemKey() {
         cache.remove(findOldestElemKey());
-        getQueue().remove();
         deleteElementFromBD(findOldestElemKey());
+        getQueue().remove();
+
     }
 
     public K findOldestElemKey() {

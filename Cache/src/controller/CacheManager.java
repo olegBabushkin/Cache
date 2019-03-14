@@ -3,14 +3,14 @@ package controller;
 import exception.NoElementInCache;
 import model.CacheL1;
 import model.CacheL2;
+import database.PojoClass;
 import strategy.IStrategy;
-
-import java.util.NoSuchElementException;
 
 public class CacheManager<K, V> implements ICache<K, V> {
     private CacheL1<K, V> cache1;
     private CacheL2<K, V> cache2;
     private IStrategy strategy;
+    private PojoClass<K,V> pojo;
 
     public CacheManager(IStrategy strategy, CacheL1 L1, CacheL2 L2) {
         this.strategy = strategy;

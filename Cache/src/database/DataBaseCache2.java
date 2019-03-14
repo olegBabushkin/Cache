@@ -20,10 +20,7 @@ public class DataBaseCache2<K,V> implements IDataBase<K,V> {
         System.out.println("addInReddis");
     }
 
-    @Override
-    public void delete(K key) {
 
-    }
 
     @Override
     public void deleteOldest(K key) {
