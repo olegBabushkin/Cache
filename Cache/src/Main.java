@@ -1,7 +1,11 @@
 import controller.CacheManager;
+import database.DataBaseCache2;
 import database.SessionFactoryUtil;
 import model.CacheL1;
 import model.CacheL2;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisShardInfo;
 import strategy.StrategyLRR1;
 
 public class Main {
@@ -17,7 +21,7 @@ public class Main {
         cache1.put("Oleg1", 16);
         cache1.put("Oleg2", 13);
 
-      /*  try {
+     /*   try {
             System.out.println(cache1.get("Olegg"));
         } catch (NoElementInCache e) {
             System.out.println(e.getMessage());
