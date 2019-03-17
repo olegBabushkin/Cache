@@ -5,7 +5,7 @@ public class Main {
         tree.add(new Data<Integer, String>(16));
         tree.add(new Data<Integer, String>(11));
         tree.add(new Data<Integer, String>(12));
-        tree.add(new Data<Integer, String>(9, "asd"));
+        tree.add(new Data<Integer, String>(9, "asdv"));
 
         System.out.println(tree.min());
         System.out.println(tree.max());
